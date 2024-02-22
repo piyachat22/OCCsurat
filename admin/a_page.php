@@ -1,0 +1,29 @@
+<?php session_start();?>
+<?php 
+
+if (!$_SESSION["admin_id"]){  //check session
+
+	  Header("Location: login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form 
+
+}else{?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin page</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>You are Administrator </h1>
+    <p><strong>hi</strong> :&nbsp;<?php echo ($_SESSION['user_name']);?> <!--show detail login-->
+      <?php //session_destroy();?>
+    </p>
+    <p>&nbsp;</p>
+    <p><a href="c_login.php">Log out</strong></a></p>
+<?php
+// include("index.php")
+?>
+</body>
+</html>
+<?php }?>
